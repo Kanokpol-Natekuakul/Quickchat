@@ -20,7 +20,7 @@ export const textMessageController = async (req, res) => {
     const chat = await Chat.findOne({ userId, _id: chatId })
     chat.messages.push({ role: 'User', content: prompt, timestamp: Date.now(), isImage: false })
 
-    const {choics} = await openai.chat.completions.create({
+    const {choices} = await openai.chat.completions.create({
       model: "gemini-2.0-flash",
       messages: [
         { role: "system", content: "You are a helpful assistant." },
@@ -31,7 +31,7 @@ export const textMessageController = async (req, res) => {
       ],
     });
 
-    const reply={...choics[0].message,timestamp: Date.now(), isImage: false}
+    const reply={...choices[0].message,timestamp: Date.now(), isImage: false}
     res.json({success:true,reply})
     chat.messages.push(reply)
     await chat.save()

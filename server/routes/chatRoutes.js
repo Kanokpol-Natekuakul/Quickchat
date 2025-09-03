@@ -4,7 +4,7 @@ import { protect } from '../middlewares/auth.js'
 
 const chatRouter=express.Router()
 
-chatRouter.get('/created',protect, createChat)
+chatRouter.get('/create',protect, createChat)
 chatRouter.get('/get',protect, getChat)
 chatRouter.post('/delete',protect, deleteChat)
 

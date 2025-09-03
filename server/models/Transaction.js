@@ -7,7 +7,7 @@ const transactionSchema=new mongoose.Schema({
   credits:{type:Number,required:true},
   isPaid:{type:Boolean,required:false},
   
-},{timeseries:true})
+},{timestamps:true})
 
 const Transaction=mongoose.model('Transaction',transactionSchema)
 

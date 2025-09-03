@@ -19,6 +19,7 @@ export const registerUser=async (req,res)=>{
     if(userExists){
       return res.json({succes:false,message:"User already exists"})
     }
+    
     const user=await User.create({name,email,password})
     const token = generateToken(user._id)
     res.json({success:true,token})
