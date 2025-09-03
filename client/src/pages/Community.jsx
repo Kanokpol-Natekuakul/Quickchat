@@ -13,7 +13,7 @@ const Community = () => {
     try {
       const {data}=await axios.get('/api/user/published-images')
       if(data.success){
-        setImages(data.message)
+        setImages(data.images)
       }else{
         toast.error(data.message)
       }

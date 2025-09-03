@@ -32,11 +32,11 @@ export const textMessageController = async (req, res) => {
     });
 
     const reply={...choices[0].message,timestamp: Date.now(), isImage: false}
-    res.json({success:true,reply})
     chat.messages.push(reply)
-    await chat.save()
-
+    await chat.save() 
     await User.updateOne({_id:userId},{$inc:{credits:-1}})
+    
+    res.json({success:true,reply})
 
   
   } catch (error) {

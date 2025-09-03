@@ -8,15 +8,16 @@ const Message = ({message}) => {
   useEffect(()=>{
     Prima.highlightAll()
   },[message.content])
+  console.log('Message role:', message.role, message);
   return (
     <div>
-      {message.role==='user'?(
+      {message.role==="User"?(
         <div className='flex items-start justify-end my-4 gap-2'>
           <div className='flex flex-col gap-2 p-2 px-4 bg-slate-50 dark:bg-[#57317C]/30 border border-[#80609F]/30 rounded-md max-w-2xl'>
           <p className='text-sm dark:text-primary'>{message.content}</p>
           <span className='text-xs text-gray-400 dark:text-[#B1A6C0]'>{moment(message.timestamp).fromNow()}</span>
           </div>
-          <img src={assets.user_icon} className='w-8 rounded-full' alt="" />
+          <img src={assets.user_icon} className='w-8 rounded-full ml-2' alt="" />
         </div>
       ):(
         <div className='inline-flex flex-col gap-2 p-2 px-4 max-w-2xl bg-primary/20 dark:bg-[#57317C]/30 border border-[#80609F]/30 rounded-md my-4'>

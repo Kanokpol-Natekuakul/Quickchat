@@ -14,7 +14,7 @@ const Credits = () => {
       const {data}=await axios.get('/api/credit/plan',{
         headers:{Authorization:token}
       })
-      if(data.successs){
+      if(data.success){
         setPlans(data.plans)
       }else{
         toast.error(data.message || 'Failed to fetch plans')
@@ -30,7 +30,8 @@ const Credits = () => {
       const {data}=await axios.post('/api/credit/purchase',{planId},{
         headers:{Authorization:token}
       })
-      if(data.successs){
+      console.log("API Response:", data);
+      if(data.success){
         window.location.href=data.url
       }else{
         toast.error(data.message)

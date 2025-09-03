@@ -85,7 +85,6 @@ export const AppContextProvider=({children})=>{
 
   useEffect(()=>{
     if(token){
-
       fetchuser()
     }else{
       setUser(null)
