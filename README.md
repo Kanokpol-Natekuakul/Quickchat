@@ -351,6 +351,12 @@ cd server
 3. เพิ่ม frontend component ใน `client/src/components/`
 4. อัพเดท context หรือ state management
 
+# credit
+
+- https://youtu.be/YEPH-DWnDPE?si=fLDAnEqbudSI3tDy
+
+ฝึกฝนและศึกษาจากคลิปนี้
+
 ### การทดสอบ:
 - ใช้ Postman หรือ Thunder Client สำหรับทดสอบ API
 - ใช้ React DevTools สำหรับ debug frontend
